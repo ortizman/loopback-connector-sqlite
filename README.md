@@ -25,8 +25,6 @@ Run the example from the root directory as follows:
 node examples/example.js
 ```
 
-Further usage documentation: TBD
-
 ## SQLite3 configuration for tests
 The `.loopbackrc` file holds the settings for the tests. It's in JSON format and has following content:
 * For file based SQLite testing
