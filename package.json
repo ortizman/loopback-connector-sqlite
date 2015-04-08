@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Synerzip/loopback-connector-sqlite",
   "dependencies": {
     "async": "^0.9.0",
+    "loopback-connector": "^1.2.1",
     "loopback-datasource-juggler": "^2.23.0",
     "sqlite3": "^3.0.5"
   },
