@@ -16,7 +16,7 @@
     "connector",
     "sqlite3"
   ],
-  "author": "Tushar Chauhan",
+  "author": "Tushar Chauhan <chauhan.tushar@gmail.com>",
   "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/Synerzip/loopback-connector-sqlite/issues"
