@@ -4,10 +4,17 @@
 **loopback-connector-sqlite** is the SQLite3 connector module for [loopback-datasource-juggler](https://github.com/strongloop/loopback-datasource-juggler).
 
 ## Basic usage
+
+#### Installation
+Install the module using the command below in your projects root directory:
+```sh
+npm i loopback-connector-sqlite
+```
+
 You will require [loopback-datasource-juggler](https://github.com/strongloop/loopback-datasource-juggler) and [node-sqlite3](https://github.com/mapbox/node-sqlite3) modules for using this connector.
-The SQLite3 database can be configured to operate in 2 ways: with a DB file name and anonymous in-memory DB.
+The SQLite3 database can be configured to operate in 2 ways: with a DB file name or with an anonymous in-memory DB.
 This connector needs 2 configuration parameters:
-* `file_name`(string): A file name for SQLite DB file. It can have any string value for file based SQLite usage and `null` for in-memory usage.
+* `file_name`(string): A file name for SQLite DB file. It can have any string value for file based SQLite usage or `null` for in-memory usage.
 * `debug`(boolean): Used for disabling and enabling logging.
 
 A DataSource with basic settings can be defined as shown below:
@@ -19,10 +26,10 @@ var dataSource = new DataSource(require('../index'), {
 });
 ```
 
-Checkout `examples\example.js` to get the idea of basic usage.
-Run the example from the root directory as follows:
+Checkout `examples\` folder to get the idea of basic usage.
+Run the examples from the root directory as follows:
 ```sh
-node examples/example.js
+node examples/[example_file]
 ```
 
 ## SQLite3 configuration for tests
