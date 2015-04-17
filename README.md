@@ -26,7 +26,7 @@ var dataSource = new DataSource(require('../index'), {
 });
 ```
 
-Checkout `examples\` folder to get the idea of basic usage.
+Checkout `examples` folder to get the idea of basic usage.
 Run the examples from the root directory as follows:
 ```sh
 node examples/[example_file]
@@ -62,3 +62,8 @@ The `debug` value is to set debugging mode.
 ## Running the tests
 * execute `npm install` for installing all the dependencies.
 * execute `npm test` to run all the tests.
+
+## Further reading
+
+Follow the repository's [WIKI link](https://github.com/Synerzip/loopback-connector-sqlite/wiki) to get updated information about this connector.
+It will be updated in due time.
