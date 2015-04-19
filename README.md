@@ -3,6 +3,8 @@
 
 **loopback-connector-sqlite** is the SQLite3 connector module for [loopback-datasource-juggler](https://github.com/strongloop/loopback-datasource-juggler).
 
+Checkout **[wiki pages](https://github.com/Synerzip/loopback-connector-sqlite/wiki)** to get updated information about this connector and how to use it with a LoopBack Application to create an API.
+
 ## Basic usage
 
 #### Installation
@@ -62,8 +64,3 @@ The `debug` value is to set debugging mode.
 ## Running the tests
 * execute `npm install` for installing all the dependencies.
 * execute `npm test` to run all the tests.
-
-## Further reading
-
-Follow the repository's [WIKI link](https://github.com/Synerzip/loopback-connector-sqlite/wiki) to get updated information about this connector.
-It will be updated in due time.
