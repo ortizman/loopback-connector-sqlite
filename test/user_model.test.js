@@ -53,4 +53,14 @@ describe("SQLite Model creation test", function(){
     }
   });
 
+  it('should run auto-migration when model changes', function (done) {
+    User = db.define('User', {
+      id: {type: Number, id: true},
+      new_name: { type: String }
+    });
+    db.automigrate('User', function () {
+      done();
+    });
+  });
+  
 });
