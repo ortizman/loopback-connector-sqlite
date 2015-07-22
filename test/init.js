@@ -5,12 +5,22 @@
 module.exports = require('should');
 var DataSource = require('loopback-datasource-juggler').DataSource;
 
-var config = require('rc')('loopback').sqlite.test;
+var config = require('rc')('loopback').sqlite;
 
 console.log(config);
 
 global.getDataSource = global.getSchema = function (customConfig) {
- var db = new DataSource(require('../'), customConfig || config);
+ var db = new DataSource(require('../'), customConfig || config.test);
+
+  db.log = function (msg) {
+   console.log(msg);
+  };
+
+ return db;
+};
+
+global.getDataSource2 = function (customConfig) {
+ var db = new DataSource(require('../'), customConfig || config.test2);
 
   db.log = function (msg) {
    console.log(msg);
