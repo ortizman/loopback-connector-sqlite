@@ -16,14 +16,14 @@ npm i loopback-connector-sqlite
 You will require [loopback-datasource-juggler](https://github.com/strongloop/loopback-datasource-juggler) and [node-sqlite3](https://github.com/mapbox/node-sqlite3) modules for using this connector.
 The SQLite3 database can be configured to operate in 2 ways: with a DB file name or with an anonymous in-memory DB.
 This connector needs 2 configuration parameters:
-* `file_name`(string): A file name for SQLite DB file. It can have any string value for file based SQLite usage or `null` for in-memory usage.
+* `file_name`(string): It can be a file at the root of the project itself if preceded by `./`, e.g., _`./test.sqlite3`_, OR, it can be an absolute file path(e.g. _`/home/[user]/Desktop/test.sqlite3`_ or _`C:\Users\[user]\Desktop\test.sqlite3`_) to generate/use the SQLite file. It can also contain `null` for SQLite3 in-memory usage.
 * `debug`(boolean): Used for disabling and enabling logging.
 
 A DataSource with basic settings can be defined as shown below:
 ```javascript
 var DataSource = require('loopback-datasource-juggler').DataSource;
 var dataSource = new DataSource(require('../index'), {
-  file_name: 'dev.sqlite3',
+  file_name: './dev.sqlite3',
   debug: false
 });
 ```
@@ -41,7 +41,7 @@ The `.loopbackrc` file holds the settings for the tests. It's in JSON format and
 {
   "sqlite": {
     "test": {
-      "file_name": "test.sqlite3",
+      "file_name": "./test.sqlite3",
       "debug": false
     }
   }
