@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-sqlite",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "LoopBack Connector for SQLite3 Database. LoopBack is an API Mgmt/MBaas platform built on top of express by StrongLoop. It supports the notion of connectors to connect to databases, restful web services, soap web services etc.",
   "main": "index.js",
   "scripts": {
