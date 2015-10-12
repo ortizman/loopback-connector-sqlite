@@ -13,7 +13,7 @@ Install the module using the command below in your projects root directory:
 npm i loopback-connector-sqlite
 ```
 
-You will require [loopback-datasource-juggler](https://github.com/strongloop/loopback-datasource-juggler) and [node-sqlite3](https://github.com/mapbox/node-sqlite3) modules for using this connector.
+#### Configuration
 The SQLite3 database can be configured to operate in 2 ways: with a DB file name or with an anonymous in-memory DB.
 This connector needs 2 configuration parameters:
 * `file_name`(string): It can be a file at the root of the project itself if preceded by `./`, e.g., `./test.sqlite3`, OR, it can be an absolute file path(e.g. `/home/[user]/Desktop/test.sqlite3` or `C:\Users\[user]\Desktop\test.sqlite3`) to generate/use the SQLite file. It can also contain `null` for SQLite3 in-memory usage.
@@ -33,6 +33,15 @@ Run the examples from the root directory as follows:
 ```sh
 node examples/[example_file]
 ```
+
+#### NOTE: Defining Models
+The model names must not be among one of the keywords used in SQLite3. Checkout [all SQLite3 keywords here](https://sqlite.org/lang_keywords.html). It's stated there that _these **keywords** may **not be used** as the **names of tables, indices, columns, databases, user-defined functions, collations, virtual table modules, or any other named object**._
+
+#### Dependencies
+* [sqlite3](https://www.npmjs.com/package/sqlite3)
+* [loopback-connector](https://www.npmjs.com/package/loopback-connector)
+* [debug](https://www.npmjs.com/package/debug)
+* [async](https://www.npmjs.com/package/async)
 
 ## SQLite3 configuration for tests
 The `.loopbackrc` file holds the settings for the tests. It's in JSON format and has following content:
