@@ -12,6 +12,7 @@ lib-cov
 *.gz
 .grunt
 .lock-wscript
+.jshintrc
 
 pids
 logs
