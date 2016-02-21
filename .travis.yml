@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - "4.1.2"
+  - "4.3.0"
   - "0.12"
-  - "0.11"
 
 branches:
   only:
