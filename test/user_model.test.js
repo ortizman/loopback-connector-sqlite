@@ -47,8 +47,27 @@ describe("SQLite Model creation test", function(){
           expect(u.name).to.be.equal("John");
         else if(u.id == 2) {
           expect(u.name).to.be.equal("Doe");
-          done();
+          testArrayContents(done)
+          // done();
         }
+      });
+    }
+
+    function testArrayContents(cb) {
+      var namesSomething = [{name: 'John', some: 'object'}, {name: 'Doe', some: 'other object'}];
+      var names = [];
+      namesSomething.forEach(function(n) {
+        names.push(n.name);
+      });
+
+      User.find({
+        where: {
+          name: {inq: names}
+        }
+      }, function(err, foundUsers) {
+        expect(names[0]).to.be.equal('John');
+        expect(names[1]).to.be.equal('Doe');
+        cb();
       });
     }
   });
