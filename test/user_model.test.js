@@ -53,21 +53,22 @@ describe("SQLite Model creation test", function(){
       });
     }
 
+    var searchCond = {'order': 'id'};
     function testArrayContents(cb) {
       var namesSomething = [{name: 'John', some: 'object'}, {name: 'Doe', some: 'other object'}];
       var names = [];
       namesSomething.forEach(function(n) {
         names.push(n.name);
       });
-
-      User.find({
-        where: {
-          name: {inq: names}
-        }
-      }, function(err, foundUsers) {
+      searchCond.where = {name: {inq: names}};
+      console.log('find:')
+      User.find(searchCond, function(err, foundUsers) {
         expect(names[0]).to.be.equal('John');
         expect(names[1]).to.be.equal('Doe');
-        cb();
+        User.find(searchCond, function(err, foundUsers) {
+          expect(searchCond.order).to.be.equal('id');
+          cb();
+        });
       });
     }
   });
